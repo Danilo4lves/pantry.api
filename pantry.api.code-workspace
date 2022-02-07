@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.tabSize": 2,
+		"editor.detectIndentation": false,
+		"files.eol": "\n",
+		"javascript.validate.enable": false,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"editor.formatOnSave": true,
+		"editor.wordWrap": "on",
+	},
+	"extensions": {
+		"recommendations": [
+			"dbaeumer.vscode-eslint",
+			"eamodio.gitlens",
+			"oderwat.indent-rainbow",
+			"waderyan.nodejs-extension-pack",
+			"naumovs.color-highlight",
+			"editorconfig.editorconfig",
+			"huuums.vscode-fast-folder-structure",
+			"esbenp.prettier-vscode",
+			"wix.vscode-import-cost",
+			"ms-azuretools.vscode-docker",
+		]
+	}
+}

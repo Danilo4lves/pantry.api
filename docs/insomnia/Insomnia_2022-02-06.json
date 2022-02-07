@@ -1,0 +1,98 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-02-07T00:43:33.511Z",
+  "__export_source": "insomnia.desktop.app:v2021.7.2",
+  "resources": [
+    {
+      "_id": "req_3acfdfb3273444b29f18ba63d1cea612",
+      "parentId": "fld_2f81323952a64e2484f6fdf9a5f1b6eb",
+      "modified": 1644193980864,
+      "created": 1644193900830,
+      "url": "{{baseURL}}/health",
+      "name": "Check",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1644193900830,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_2f81323952a64e2484f6fdf9a5f1b6eb",
+      "parentId": "wrk_229697be56894f3aaaf4f6b56ba3111c",
+      "modified": 1644193871679,
+      "created": 1644193871679,
+      "name": "Health",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1644193871680,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_229697be56894f3aaaf4f6b56ba3111c",
+      "parentId": null,
+      "modified": 1644193863351,
+      "created": 1644193863351,
+      "name": "Pantry",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_26b5b1c71ed9747e7906dc94048f861c7eba439c",
+      "parentId": "wrk_229697be56894f3aaaf4f6b56ba3111c",
+      "modified": 1644193918611,
+      "created": 1644193863357,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1644193863357,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_26b5b1c71ed9747e7906dc94048f861c7eba439c",
+      "parentId": "wrk_229697be56894f3aaaf4f6b56ba3111c",
+      "modified": 1644193863359,
+      "created": 1644193863359,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_f2b6456bd8744f4f91fd68dc535562f2",
+      "parentId": "wrk_229697be56894f3aaaf4f6b56ba3111c",
+      "modified": 1644193863352,
+      "created": 1644193863352,
+      "fileName": "Pantry",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_cf3a85923fce4e808a871a6620002c00",
+      "parentId": "env_26b5b1c71ed9747e7906dc94048f861c7eba439c",
+      "modified": 1644194559320,
+      "created": 1644193921464,
+      "name": "Development",
+      "data": { "baseURL": "http://localhost:3333" },
+      "dataPropertyOrder": { "&": ["baseURL"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1644193921464,
+      "_type": "environment"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "incremental": true,
+    "module": "commonjs",
+    "outDir": "./dist",
+    "paths": {
+      "~/test/*": [
+        "test/*"
+      ],
+      "~/*": [
+        "src/*"
+      ]
+    },
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es2017",
+    "skipLibCheck": true,
+    "strict": false
+  }
+}
