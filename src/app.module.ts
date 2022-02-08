@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { CommonModule } from './common/common.module';
+import { CommonModule } from './common';
 import {
   getEnvFile,
   ThrottlerConfig,
