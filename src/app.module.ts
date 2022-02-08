@@ -10,7 +10,7 @@ import {
   validationSchema,
   TypeOrmConfig,
 } from './config';
-import { HealthModule } from './modules';
+import { HealthModule, UsersModule } from './modules';
 
 @Module({
   imports: [
@@ -27,6 +27,8 @@ import { HealthModule } from './modules';
     CommonModule,
 
     HealthModule,
+
+    UsersModule,
   ],
 })
 export class AppModule {}
