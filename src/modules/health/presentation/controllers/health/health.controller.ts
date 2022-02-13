@@ -5,7 +5,7 @@ import {
   TypeOrmHealthIndicator,
 } from '@nestjs/terminus';
 
-import { IgnoreExceptionsInterceptor } from '~/common';
+import { IgnoreExceptionsInterceptor } from '~/common/presentation';
 
 @Controller('health')
 export class HealthController {

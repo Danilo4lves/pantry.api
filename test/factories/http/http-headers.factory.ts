@@ -1,7 +1,7 @@
 import * as faker from 'faker';
 import { Factory } from 'fishery';
 
-import { HttpHeaders } from '~/common';
+import { HttpHeaders } from '~/common/domain';
 
 import { miscellaneousFactories } from '../miscellaneous';
 
