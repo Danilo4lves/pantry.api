@@ -7,9 +7,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
+import { ProductGroupEntity } from '~/modules/product-groups/infra';
 import { UserModel } from '~/modules/users/domain';
-
-import { ProductGroupEntity } from './product-group.entity';
 
 @Entity('Users')
 export class UserEntity implements UserModel {

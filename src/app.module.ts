@@ -10,7 +10,14 @@ import {
   validationSchema,
   TypeOrmConfig,
 } from './config';
-import { HealthModule, UsersModule } from './modules';
+import {
+  GroupProductsModule,
+  HealthModule,
+  ProductGroupsModule,
+  ProductsModule,
+  StoresModule,
+  UsersModule,
+} from './modules';
 
 @Module({
   imports: [
@@ -26,7 +33,15 @@ import { HealthModule, UsersModule } from './modules';
 
     CommonModule,
 
+    GroupProductsModule,
+
     HealthModule,
+
+    ProductGroupsModule,
+
+    ProductsModule,
+
+    StoresModule,
 
     UsersModule,
   ],

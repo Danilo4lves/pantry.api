@@ -4,13 +4,14 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-import { ProductGroupModel } from '~/modules/users/domain';
-
-import { UserEntity } from './user.entity';
+import { GroupProductEntity } from '~/modules/group-products/infra';
+import { ProductGroupModel } from '~/modules/product-groups/domain';
+import { UserEntity } from '~/modules/users/infra';
 
 @Entity('ProductGroups')
 export class ProductGroupEntity implements ProductGroupModel {
@@ -34,4 +35,9 @@ export class ProductGroupEntity implements ProductGroupModel {
 
   @UpdateDateColumn()
   lastUpdatedAt: Date;
+
+  @OneToMany(() => GroupProductEntity, gProduct => gProduct.groupId, {
+    cascade: true,
+  })
+  groupProducts: GroupProductEntity[];
 }
