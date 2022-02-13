@@ -7,8 +7,8 @@ import {
 } from 'typeorm';
 
 import { GroupProductModel } from '~/modules/group-products/domain';
-import { ProductGroupEntity } from '~/modules/product-groups/infra';
-import { ProductEntity } from '~/modules/products/infra';
+import { ProductGroupEntity } from '~/modules/product-groups/infra/typeorm/entities';
+import { ProductEntity } from '~/modules/products/infra/typeorm/entities';
 
 @Entity('GroupProducts')
 export class GroupProductEntity implements GroupProductModel {

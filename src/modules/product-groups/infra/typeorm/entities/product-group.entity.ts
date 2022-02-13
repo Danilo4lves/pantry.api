@@ -9,9 +9,9 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import { GroupProductEntity } from '~/modules/group-products/infra';
+import { GroupProductEntity } from '~/modules/group-products/infra/typeorm/entities';
 import { ProductGroupModel } from '~/modules/product-groups/domain';
-import { UserEntity } from '~/modules/users/infra';
+import { UserEntity } from '~/modules/users/infra/typeorm/entities';
 
 @Entity('ProductGroups')
 export class ProductGroupEntity implements ProductGroupModel {

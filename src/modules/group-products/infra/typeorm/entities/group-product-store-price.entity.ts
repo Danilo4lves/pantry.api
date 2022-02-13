@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
 
 import { GroupProductStorePriceModel } from '~/modules/group-products/domain';
-import { StoreEntity } from '~/modules/stores/infra';
+import { StoreEntity } from '~/modules/stores/infra/typeorm/entities';
 
 import { GroupProductEntity } from './group-product.entity';
 

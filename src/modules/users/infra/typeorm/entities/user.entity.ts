@@ -7,7 +7,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import { ProductGroupEntity } from '~/modules/product-groups/infra';
+import { ProductGroupEntity } from '~/modules/product-groups/infra/typeorm/entities';
 import { UserModel } from '~/modules/users/domain';
 
 @Entity('Users')

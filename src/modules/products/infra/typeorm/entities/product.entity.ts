@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import { GroupProductEntity } from '~/modules/group-products/infra';
+import { GroupProductEntity } from '~/modules/group-products/infra/typeorm/entities';
 import { ProductModel } from '~/modules/products/domain';
 
 @Entity('Products')
