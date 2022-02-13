@@ -32,7 +32,6 @@ export class UserEntity implements UserModel {
   phone?: number;
 
   @OneToMany(() => ProductGroupEntity, pGroup => pGroup.userId, {
-    eager: true,
     cascade: true,
   })
   productGroups: ProductGroupEntity[];
