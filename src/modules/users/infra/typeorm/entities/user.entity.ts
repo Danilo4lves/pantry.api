@@ -21,6 +21,9 @@ export class UserEntity implements UserModel {
   @Column()
   email: string;
 
+  @Column()
+  password: string;
+
   @CreateDateColumn()
   createdAt: Date;
 

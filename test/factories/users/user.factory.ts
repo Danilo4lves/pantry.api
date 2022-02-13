@@ -9,6 +9,7 @@ export const userFactory = Factory.define<UserModel>(() => ({
   id: faker.datatype.number(),
   name: faker.datatype.string(),
   email: faker.datatype.string(),
+  password: faker.datatype.string(),
   createdAt: faker.date.recent(),
   lastUpdatedAt: faker.date.recent(),
   phone: miscellaneousFactories.optional.build(faker.datatype.number()),
