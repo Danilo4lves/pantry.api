@@ -14,6 +14,7 @@ import {
   TypeOrmCreateUserRepository,
   UserEntity,
 } from './infra';
+import { UsersController } from './presentation';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserEntity])],
@@ -26,5 +27,6 @@ import {
     },
     { provide: CREATE_USER, useClass: CreateUserService },
   ],
+  controllers: [UsersController],
 })
 export class UsersModule {}
