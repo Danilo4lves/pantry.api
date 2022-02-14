@@ -1,2 +1,2 @@
-export * from './product-group.model';
+export * from './create-user-payload.model';
 export * from './user.model';

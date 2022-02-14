@@ -6,6 +6,8 @@ import {
   USER_REPOSITORY,
   VALIDATE_PASSWORD_STRENGTH,
   ValidatePasswordStrengthService,
+  CREATE_USER,
+  CreateUserService,
 } from './data';
 import {
   FacadeTypeOrmUserRepository,
@@ -22,6 +24,7 @@ import {
       provide: VALIDATE_PASSWORD_STRENGTH,
       useClass: ValidatePasswordStrengthService,
     },
+    { provide: CREATE_USER, useClass: CreateUserService },
   ],
 })
 export class UsersModule {}
