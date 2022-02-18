@@ -3,6 +3,7 @@ export interface UserModel {
   name: string;
   email: string;
   password: string;
+  refreshToken?: string;
   createdAt: Date;
   lastUpdatedAt: Date;
   phone?: number;

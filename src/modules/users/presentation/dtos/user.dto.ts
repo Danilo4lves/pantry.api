@@ -19,6 +19,8 @@ export class UserDTO implements UserModel {
 
   password: string;
 
+  refreshToken?: string;
+
   @Expose()
   createdAt: Date;
 
