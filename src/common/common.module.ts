@@ -81,6 +81,7 @@ import {
       useClass: AxiosHttpClient,
     },
     { provide: EVENT, useClass: EventEmitterAdapter },
+    { provide: HASH_TO_SHA256, useClass: CryptojsHashToSHA256 },
   ],
 })
 export class CommonModule {}
