@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import {
   EVENT,
   EXTRACT_ERROR_FROM_HTTP_RESPONSE,
+  HASH_TO_SHA256,
   HTTP_CLIENT,
 } from './constants';
 import {
@@ -15,6 +16,7 @@ import {
   AxiosExtractErrorFromHttpResponse,
   AxiosHttpClient,
   EventEmitterAdapter,
+  CryptojsHashToSHA256,
 } from './infra';
 import { makeValidationPipe } from './main';
 import {
@@ -67,6 +69,7 @@ import {
       useClass: AxiosHttpClient,
     },
     { provide: EVENT, useClass: EventEmitterAdapter },
+    { provide: HASH_TO_SHA256, useClass: CryptojsHashToSHA256 },
   ],
   exports: [
     {
