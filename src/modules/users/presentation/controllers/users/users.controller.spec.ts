@@ -2,40 +2,39 @@ import { Test, TestingModule } from '@nestjs/testing';
 
 import { plainToClass } from 'class-transformer';
 
-import { UserRepository, USER_REPOSITORY } from '~/modules/users/data';
+import { CREATE_USER } from '~/modules/users/data';
+import { CreateUser } from '~/modules/users/domain';
 import { factories } from '~/test/factories';
 
 import { UserDTO } from '../../dtos';
 import { UsersController } from './users.controller';
 
 describe('UsersController', () => {
-  const userRepositoryMockFactory = () => ({ create: jest.fn() });
+  const serviceMockFactory = () => ({ execute: jest.fn() });
 
   let sut: UsersController;
-  let userRepository: UserRepository;
+  let createUser: CreateUser;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [UsersController],
-      providers: [
-        { provide: USER_REPOSITORY, useFactory: userRepositoryMockFactory },
-      ],
+      providers: [{ provide: CREATE_USER, useFactory: serviceMockFactory }],
     }).compile();
 
     sut = module.get(UsersController);
-    userRepository = module.get(USER_REPOSITORY);
+    createUser = module.get(CREATE_USER);
   });
 
   it('should be defined', () => {
     expect(sut).toBeDefined();
   });
 
-  it('should call UserRepository create on store', async () => {
+  it('should call CreateUser on store', async () => {
     const payload = factories.users.createUserPayload.build();
 
     await sut.store(payload);
 
-    expect(userRepository.create).toHaveBeenCalledWith(payload);
+    expect(createUser.execute).toHaveBeenCalledWith(payload);
   });
 
   it('should return created user on store', async () => {
@@ -43,16 +42,16 @@ describe('UsersController', () => {
     const user = factories.users.user.build();
 
     jest
-      .spyOn(userRepository, 'create')
+      .spyOn(createUser, 'execute')
       .mockReturnValueOnce(Promise.resolve(user));
 
     expect(await sut.store(payload)).toEqual(plainToClass(UserDTO, user));
   });
 
-  it('should throw on store if UserRepository create throws', async () => {
+  it('should throw on store if CreateUser throws', async () => {
     const payload = factories.users.createUserPayload.build();
 
-    jest.spyOn(userRepository, 'create').mockImplementationOnce(() => {
+    jest.spyOn(createUser, 'execute').mockImplementationOnce(() => {
       throw new Error();
     });
 

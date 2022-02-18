@@ -2,20 +2,21 @@ import { Body, Controller, Inject, Post } from '@nestjs/common';
 
 import { plainToClass } from 'class-transformer';
 
-import { UserRepository, USER_REPOSITORY } from '~/modules/users/data';
+import { CREATE_USER } from '~/modules/users/data';
+import { CreateUser } from '~/modules/users/domain';
 
 import { CreateUserPayloadDTO, UserDTO } from '../../dtos';
 
 @Controller('users')
 export class UsersController {
   constructor(
-    @Inject(USER_REPOSITORY)
-    private readonly userRepository: UserRepository,
+    @Inject(CREATE_USER)
+    private readonly createUser: CreateUser,
   ) {}
 
   @Post()
   async store(@Body() dto: CreateUserPayloadDTO): Promise<UserDTO> {
-    const user = await this.userRepository.create(dto);
+    const user = await this.createUser.execute(dto);
 
     return plainToClass(UserDTO, user);
   }
