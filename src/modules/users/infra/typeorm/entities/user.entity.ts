@@ -24,9 +24,6 @@ export class UserEntity implements UserModel {
   @Column()
   password: string;
 
-  @Column({ nullable: true })
-  refreshToken?: string;
-
   @CreateDateColumn()
   createdAt: Date;
 
