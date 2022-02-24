@@ -1,5 +1,6 @@
 import { HttpModule } from '@nestjs/axios';
 import { ClassSerializerInterceptor, Global, Module } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { APP_GUARD, APP_INTERCEPTOR, APP_FILTER, APP_PIPE } from '@nestjs/core';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { ThrottlerGuard } from '@nestjs/throttler';
@@ -10,6 +11,7 @@ import {
   EXTRACT_ERROR_FROM_HTTP_RESPONSE,
   HASH_TO_SHA256,
   HTTP_CLIENT,
+  KEY_VALUE_DATABASE,
 } from './constants';
 import {
   HttpExceptionFilter,
@@ -18,7 +20,7 @@ import {
   EventEmitterAdapter,
   CryptojsHashToSHA256,
 } from './infra';
-import { makeValidationPipe } from './main';
+import { makeRedisKeyValueDatabase, makeValidationPipe } from './main';
 import {
   ExceptionsInterceptor,
   ResponseTransformerInterceptor,
@@ -69,6 +71,11 @@ import {
       useClass: AxiosHttpClient,
     },
     { provide: EVENT, useClass: EventEmitterAdapter },
+    {
+      provide: KEY_VALUE_DATABASE,
+      useFactory: makeRedisKeyValueDatabase,
+      inject: [ConfigService],
+    },
     { provide: HASH_TO_SHA256, useClass: CryptojsHashToSHA256 },
   ],
   exports: [
@@ -81,6 +88,11 @@ import {
       useClass: AxiosHttpClient,
     },
     { provide: EVENT, useClass: EventEmitterAdapter },
+    {
+      provide: KEY_VALUE_DATABASE,
+      useFactory: makeRedisKeyValueDatabase,
+      inject: [ConfigService],
+    },
     { provide: HASH_TO_SHA256, useClass: CryptojsHashToSHA256 },
   ],
 })
